@@ -14,7 +14,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
     hass.data.setdefault(DOMAIN, {})[entry.entry_id] = entry.data
     # Load the cover platform with the configuration entry
     hass.async_create_task(
-        hass.config_entries.async_forward_entry_setups(entry, "cover")
+        hass.config_entries.async_forward_entry_setups(entry, ["cover"])
     )
     return True
 
